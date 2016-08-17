@@ -1,0 +1,17 @@
+Package: bc
+Type: Package
+Title: My Functions for Binary Classification
+Version: 0.0.9000
+Author: Daniel Falbel
+Maintainer: Daniel Falbel <dfalbel@gmail.com>
+Description: Some usefull functions to use in my binary classification workflow.
+    It's based in mlr workflow but adds some convenience functions for unbalanced
+    datasets.
+License: MIT + file LICENSE
+LazyData: TRUE
+Imports:
+    magrittr,
+    ParamHelpers
+Depends:
+    mlr
+RoxygenNote: 5.0.1
