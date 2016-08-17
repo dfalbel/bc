@@ -2,5 +2,9 @@
 
 export("%>%")
 export(create_task)
+export(model_performance)
+export(my_randomForest)
+export(predict_model)
+export(train_model)
 import(mlr)
 importFrom(magrittr,"%>%")

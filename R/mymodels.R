@@ -4,6 +4,7 @@
 #'
 #' @param maxit maximum number of iterations in random tune search
 #'
+#' @export
 my_randomForest <- function(maxit = 10){
   base.lrn <- mlr::makeLearner("classif.randomForest", predict.type = "prob")
   ctrl <- mlr::makeTuneControlRandom(maxit = maxit)

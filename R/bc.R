@@ -31,6 +31,7 @@ create_task <- function(data, target, perc = 0.01, beta){
 #' @param model the model object
 #' @param perc_perf percentage of task size to be used to calculate performance
 #'
+#' @export
 train_model <- function(task, model, perc_perf = 0.2){
   n <- mlr::getTaskSize(task)
   subset <- sample(1:n, size = floor((1 - perc_perf)*n))
@@ -52,6 +53,7 @@ train_model <- function(task, model, perc_perf = 0.2){
 #' @param transform_prob should probability be transformed before calculating performance
 #' metrics?
 #'
+#' @export
 model_performance <- function(data, model, transform_prob){
   predict_model(data, model,  transform_prob = transform_prob) %>%
     performance(measures = list(mlr::mmce, mlr::auc, mlr::bac))
@@ -63,6 +65,7 @@ model_performance <- function(data, model, transform_prob){
 #' @param model model object
 #' @param transform_prob should probability be transformed using the beta parameter?
 #'
+#' @export
 predict_model <- function(data, model, transform_prob = T){
   pred <- predict(model, newdata = data)
   if (transform_prob) {
